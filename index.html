@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SeriesHub</title>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <p class="titulo-principal">SeriesHub</p>
+        <div class="card-series">
+            <div class="search-container">
+                <input type="text" id="movie-name" placeholder="Digite o nome da serie aqui...">
+                <button id="search-btn">Pesquisar</button>
+            </div>
+            <div id="result"></div>
+
+
+            <div class="botao-escolha">
+                <div class="container-opcoes">
+                    <select id="status" class="opçoes-status" required>
+                        <option selected disabled value="">Status</option>
+                        <option value="assistir">Assistir</option>
+                        <option value="assistido">Assistido</option>
+                    </select>
+                </div>
+
+                <div class="botao-strimings">
+                    <select class="strimings" required>
+                        <option selected disabled value="">Distribuidor</option>
+                        <option value="Netflix">Netflix</option>
+                        <option value="HBO MAX">HBO MAX</option>
+                        <option value="Disney+">Disney+</option>
+                        <option value="Prime Video">Prime Video</option>
+                        <option value="Paramount">Paramount</option>
+                        <option value="Globo Play">Globo Play</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select id="prioridade" required>
+                        <option selected disabled value="">Prioridades</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <button class="escolher" id="escolher">Escolher</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="tables">
+        <table class="table" id="tabela-assistir">
+
+            <thead>
+                <caption class="titulo-tabela">Assistir</caption>
+                <tr>
+                    <th>Serie</th>
+                    <th>Distribuidor</th>
+                    <th>Status</th>
+                    <th>Prioridade</th>                  
+                    <th>Remover serie</th>                  
+                </tr>
+            </thead>
+            <tbody id="tbody-assistir">
+
+            </tbody>
+        </table>
+
+        <table class="table" id="tabela-assistido">
+            <caption class="titulo-tabela">Assistidos</caption>
+            <thead>
+                <tr>
+                    <th>Serie</th>
+                    <th>Distribuidor</th>
+                    <th>Status</th>
+                    <th>Remover serie</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-assistido">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="key.js"></script>
+    <script src="index.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
