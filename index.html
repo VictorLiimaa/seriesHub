@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,99 +7,99 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>SeriesHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <title>Films Flow</title>
 </head>
-
-
 <body>
-
+    <p class="titulo-principal">Films Flow</p>
     <div class="container">
-
-        <p class="titulo-principal">SeriesHub</p>
         <div class="card-series">
             <div class="search-container">
                 <input type="text" id="movie-name" placeholder="Digite o nome da serie aqui...">
                 <button id="search-btn">Pesquisar</button>
             </div>
+            <div id="filme-pesquisado" class="filme-pesquisado"></div>
             <div id="result"></div>
-
-
             <div class="botao-escolha">
-                <div class="container-opcoes">
+                <div class="container-opcoes" id="container-opcoes">
                     <select id="status" class="opçoes-status" required>
                         <option selected disabled value="">Status</option>
                         <option value="assistir">Assistir</option>
+                        <option value="assistindo">Assistindo</option>
                         <option value="assistido">Assistido</option>
                     </select>
                 </div>
-
-                <div class="botao-strimings">
-                    <select class="strimings" required>
-                        <option selected disabled value="">Distribuidor</option>
-                        <option value="Netflix">Netflix</option>
-                        <option value="HBO MAX">HBO MAX</option>
-                        <option value="Disney+">Disney+</option>
-                        <option value="Prime Video">Prime Video</option>
-                        <option value="Paramount">Paramount</option>
-                        <option value="Globo Play">Globo Play</option>
-                    </select>
-                </div>
-
-                <div>
+                <div class="container-opcoes">
                     <select id="prioridade" required>
                         <option selected disabled value="">Prioridades</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-
                     </select>
                 </div>
-
                 <div>
                     <button class="escolher" id="escolher">Escolher</button>
                 </div>
             </div>
-
-
+        </div>
+        <div class="tables">
+            <button class="table-title" onclick="openTable('assistir')">Assistir</button>
+            <button class="table-title" onclick="openTable('assistindo')">Assistindo</button>
+            <button class="table-title" onclick="openTable('assistidos')">Assistidos</button>
         </div>
     </div>
-    <div class="tables">
-        <table class="table" id="tabela-assistir">
-
+    <div id="modal-assistir" class="modal">
+        <span class="close" onclick="closeTable('modal-assistir')">&times;</span>
+        <table class="table">
             <thead>
                 <caption class="titulo-tabela">Assistir</caption>
                 <tr>
-                    <th>Serie</th>
-                    <th>Distribuidor</th>
+                    <th class="colPoster">Poster</th>
+                    <th>Título</th>
                     <th>Status</th>
                     <th>Prioridade</th>                  
                     <th>Remover serie</th>                  
                 </tr>
             </thead>
             <tbody id="tbody-assistir">
-
             </tbody>
         </table>
-
-        <table class="table" id="tabela-assistido">
-            <caption class="titulo-tabela">Assistidos</caption>
+    </div>
+    <div id="modal-assistindo" class="modal">
+        <span class="close" onclick="closeTable('modal-assistindo')">&times;</span>
+        <table class="table">
+            <caption class="titulo-tabela">Assistindo</caption>
             <thead>
                 <tr>
-                    <th>Serie</th>
-                    <th>Distribuidor</th>
+                    <th class="colPoster">Poster</th>
+                    <th>Título</th>
                     <th>Status</th>
                     <th>Remover serie</th>
                 </tr>
             </thead>
-            <tbody id="tbody-assistido">
+            <tbody id="tbody-assistindo">
             </tbody>
         </table>
     </div>
-
+    <div id="modal-assistidos" class="modal">
+        <span class="close" onclick="closeTable('modal-assistidos')">&times;</span>
+        <table class="table">
+            <caption class="titulo-tabela">Assistidos</caption>
+            <thead>
+                <tr>
+                    <th class="colPoster">Poster</th>
+                    <th>Título</th>
+                    <th>Status</th>
+                    <th>Remover serie</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-assistidos">
+            </tbody>
+        </table>
+    </div>
     <script src="key.js"></script>
     <script src="index.js"></script>
-    <script src="script.js"></script>
 </body>
-
-
 </html>
